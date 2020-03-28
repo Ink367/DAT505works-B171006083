@@ -1,0 +1,89 @@
+<html>
+  <head>
+
+  </head>
+<body>
+  <script type='text/JavaScript'>
+  function CheckNumber(){
+    //var teleNumber = prompt('What is your telephone number?','number');
+    var teleNumber =document.getElementById("teleNumber").value;
+    if(teleNumber.length < 11){
+      document.getElementById("showtxt").innerHTML= "少于11个数字";
+    }
+    else if (teleNumber.substr(0,1) !="1") {//要抽取的子串的起始下标。必须是数值。
+      document.getElementById("showtxt").innerHTML="必须以1开头";
+    }
+    else if (isNaN(teleNumber)) {
+      document.getElementById("showtxt").innerHTML="不是一个数字";
+
+    }
+    else{
+      document.getElementById("showtxt").innerHTML="确认";//showtxt对应的为输入框下的内容，根据答案的不同显示不同的内容但是都在showtxt。
+    }
+  }
+
+  function checkYear() {
+    var disyear = parseInt(document.getElementById("birthyear").value);
+    disyear =disyear % 12;//余数
+    switch (disyear) {
+      case 0:
+      document.getElementById("showZodiac").innerHTML="你的生肖是：猴";
+
+        break;
+        case 1:
+        document.getElementById("showZodiac").innerHTML="你的生肖是：鸡";
+          break;
+          case 2:
+          document.getElementById("showZodiac").innerHTML="你的生肖是：狗";
+            break;
+            case 3:
+            document.getElementById("showZodiac").innerHTML="你的生肖是：猪";
+              break;
+              case 4:
+              document.getElementById("showZodiac").innerHTML="你的生肖是：鼠";
+                break;
+                case 5:
+                document.getElementById("showZodiac").innerHTML="你的生肖是：牛";
+                  break;
+                  case 6:
+                  document.getElementById("showZodiac").innerHTML="你的生肖是：虎";
+                    break;
+                    case 7:
+                    document.getElementById("showZodiac").innerHTML="你的生肖是：兔";
+                      break;
+                      case 8:
+                      document.getElementById("showZodiac").innerHTML="你的生肖是：龙";
+                        break;
+                        case 9:
+                        document.getElementById("showZodiac").innerHTML="你的生肖是：蛇";
+                          break;
+                          case 10:
+                          document.getElementById("showZodiac").innerHTML="你的生肖是：马";
+                            break;
+                            case 11:
+                            document.getElementById("showZodiac").innerHTML="你的生肖是：羊";
+                              break;
+      default:
+    }
+
+  }
+//<div> 可定义文档中的分区或节（division/section）。
+//<div> 标签可以把文档分割为独立的、不同的部分。它可以用作严格的组织工具，并且不使用任何格式与其关联。
+  </script>
+<form id="form1">
+  输入手机号码（chinese number）:<br><input type="text" id="teleNumber">
+  <input type="button" value="CHECK" onclick="CheckNumber()">
+  <div id="showtxt">
+  </div>
+
+  <br>
+  输入出生年份（birth year）:<br><input type="text" id="birthyear">
+  <input type="button" value="CHECK" onclick="checkYear()">
+  <div id="showZodiac">
+  </div>
+</form>
+
+
+
+</body>
+</html>
