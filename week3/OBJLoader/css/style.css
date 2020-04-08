@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+#stormtper1{
+  width:100px;
+  height: 150px;
+  background: url("stormtrooper.jpg") no-repeat;
+}
+#stormtper2{
+  width:100px;
+  height: 150px;
+  background: url("xjbz.jpg") no-repeat;
+}
